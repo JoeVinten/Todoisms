@@ -14,6 +14,14 @@ body {
   margin: 0;
 }
 
+.gridcont--sidebar {
+  display: grid;
+  grid-template: "nav main";
+  grid-template-columns: 30% 1fr;
+  grid-gap: 10px;
+  height: 100vh;
+}
+
 .btn {
   max-width: 280px;
   height: 50px;
@@ -151,10 +159,10 @@ select:focus {
   display: none;
 }
 .sidebar {
-  width: 30%;
   height: 100vh;
   background: var(--secondary-color);
   padding: 1.5em;
+  position: relative;
 }
 
 .flx-cont--spc-between {
@@ -167,4 +175,22 @@ select:focus {
 form .btn {
   max-width: 100%;
   width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projects {
+  margin: 2em 0;
+}
+
+.projects__item {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+  padding: 1em 0em;
 }
