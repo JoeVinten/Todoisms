@@ -2,6 +2,7 @@ import "./style.css";
 import showForm from "./events/showForm";
 import submitProject from "./events/submitProject";
 import submitTodo from "./events/submitTodo";
+import completeTodo from "./events/completeTodo";
 
 let projects = [{ name: "Default", todo: [] }];
 
@@ -20,4 +21,11 @@ addProjectForm.addEventListener("submit", submitProject);
 // Create a new todo
 addToDoForm.addEventListener("submit", submitTodo);
 
+const main = document.querySelector(".main");
+
+main.addEventListener("click", e => {
+  if (e.target.classList.contains("todo__header__complete")) {
+    completeTodo(e);
+  }
+});
 export { projects };
