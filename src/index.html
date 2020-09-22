@@ -3,79 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <title>Todoisms</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
   </head>
   <body>
-    <div class="sidebar">
-      <h1>Todoisms</h1>
-      <div class="flx-cont--spc-between add-item">
-        <button class="btn btn--purple add-item__todo">Add ToDo</button>
-        <button class="btn btn--purple add-item__project">Add Project</button>
+    <div class="gridcont--sidebar">
+      <div class="sidebar">
+        <h1>Todoisms</h1>
+        <div class="flx-cont--spc-between add-item">
+          <button class="btn btn--purple add-item__todo">Add ToDo</button>
+          <button class="btn btn--purple add-item__project">Add Project</button>
+        </div>
+        <form class="add-project hide">
+          <div class="inpt-cont">
+            <input
+              type="text"
+              id="project-name"
+              class="short-input short-input--outline"
+              placeholder="Build something really cool!"
+            />
+            <label class="inpt-label" for="project-name">Project Name</label>
+          </div>
+          <button class="btn btn--purple btn-large" type="submit">
+            Submit
+          </button>
+        </form>
+        <form class="add-todo hide">
+          <div class="inpt-cont">
+            <input
+              type="text"
+              id="todo-name"
+              class="short-input short-input--outline"
+              placeholder="Get milk from the shop..."
+            />
+            <label class="inpt-label" for="todo-name">Todo Name</label>
+          </div>
+          <div class="inpt-cont">
+            <input
+              type="date"
+              id="due-date"
+              class="short-input short-input--outline short-input--date"
+            />
+            <label class="inpt-label" for="due-date">Due Date</label>
+          </div>
+          <div class="inpt-cont">
+            <select
+              name="projects"
+              id="projects-drpdwn"
+              class="short-input short-input--outline"
+            >
+              <option value="">Please select a project</option>
+            </select>
+            <label for="projects-drpdwn" class="inpt-label">Project</label>
+          </div>
+          <div class="inpt-cont">
+            <input class="radio__input" type="radio" name="priority" id="low" />
+            <label class="radio__label" for="low">Low</label>
+            <input class="radio__input" type="radio" name="priority" id="med" />
+            <label class="radio__label" for="med">Medium</label>
+            <input
+              class="radio__input"
+              type="radio"
+              name="priority"
+              id="high"
+            />
+            <label class="radio__label" for="high">High</label>
+          </div>
+          <button class="btn btn--purple btn-large" type="submit">
+            Submit
+          </button>
+        </form>
+        <div class="projects">
+          <ul></ul>
+        </div>
       </div>
-      <form class="add-project hide">
-        <div class="inpt-cont">
-          <input
-            type="text"
-            id="project-name"
-            class="short-input short-input--outline"
-            placeholder="Build something really cool!"
-          />
-          <label class="inpt-label" for="project-name">Project Name</label>
-        </div>
-        <button class="btn btn--purple btn-large" type="submit">
-          Submit
-        </button>
-      </form>
-      <form class="add-todo hide">
-        <div class="inpt-cont">
-          <input
-            type="text"
-            id="todo-name"
-            class="short-input short-input--outline"
-            placeholder="Get milk from the shop..."
-          />
-          <label class="inpt-label" for="todo-name">Todo Name</label>
-        </div>
-        <div class="inpt-cont">
-          <input
-            type="date"
-            id="due-date"
-            class="short-input short-input--outline short-input--date"
-          />
-          <label class="inpt-label" for="due-date">Due Date</label>
-        </div>
-        <div class="inpt-cont">
-          <select
-            name="projects"
-            id="projects-drpdwn"
-            class="short-input short-input--outline"
-          >
-            <option value="">Please select a project</option>
-            <option value="test1">Test 1</option>
-          </select>
-          <label for="projects-drpdwn" class="inpt-label">Project</label>
-        </div>
-        <div class="inpt-cont">
-          <input class="radio__input" type="radio" name="priority" id="low" />
-          <label class="radio__label" for="low">Low</label>
-          <input class="radio__input" type="radio" name="priority" id="med" />
-          <label class="radio__label" for="med">Medium</label>
-          <input class="radio__input" type="radio" name="priority" id="high" />
-          <label class="radio__label" for="high">High</label>
-        </div>
-        <button class="btn btn--purple btn-large" type="submit">
-          Submit
-        </button>
-      </form>
-      <div class="projects">
-        <ul></ul>
-      </div>
-    </div>
-    <div class="todos">
-      <div class="todo__card">
-        <div class="todo__card__header">
-          <h4>Hello</h4>
-        </div>
-      </div>
+      <div class="main flex-grid"></div>
     </div>
   </body>
 </html>

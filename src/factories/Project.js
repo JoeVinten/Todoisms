@@ -1,4 +1,7 @@
-let projects = [{ name: "Default", todo: [] }];
+let projects = [
+  { projectName: "Default", todo: [] },
+  { projectName: "Completed", todo: [] }
+];
 
 const Project = (projectName, todos) => {
   return { projectName, todos };

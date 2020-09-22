@@ -1,6 +1,7 @@
 import "./style.css";
 import showForm from "./events/showForm";
-import formSubmit from "./events/formSubmit";
+import submitProject from "./events/submitProject";
+import submitTodo from "./events/submitTodo";
 
 let projects = [{ name: "Default", todo: [] }];
 
@@ -13,9 +14,10 @@ const addToDoForm = document.querySelector(".add-todo");
 addProjBtn.addEventListener("click", showForm.bind("click", addProjectForm));
 addToDoBtn.addEventListener("click", showForm.bind("click", addToDoForm));
 
-// Projects object
-
 // Create a new project
-addProjectForm.addEventListener("submit", formSubmit);
+addProjectForm.addEventListener("submit", submitProject);
+
+// Create a new todo
+addToDoForm.addEventListener("submit", submitTodo);
 
 export { projects };
