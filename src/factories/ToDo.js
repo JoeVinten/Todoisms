@@ -1,7 +1,5 @@
-let ToDoList = [];
-
-const ToDo = (name, dueDate, project, priority) => {
-  return { name, dueDate, project, priority };
+const ToDo = (uniqId, name, dueDate, project, priority, status) => {
+  return { uniqId, name, dueDate, project, priority, status };
 };
 
 export default ToDo;

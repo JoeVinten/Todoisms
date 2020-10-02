@@ -1,11 +1,26 @@
+import { projects } from "../factories/Project";
+
+const updateStatus = (status, target) => {
+  for (let i = 0; i < projects.length; i++) {
+    for (let j = 0; j < projects[i].todo.length; j++) {
+      if (projects[i].todo[j].uniqId == target) {
+        projects[i].todo[j].status = status;
+      }
+    }
+  }
+};
+
 const completeTodo = e => {
+  let itemId = e.target.parentElement.parentElement.dataset.id;
   if (e.target.checked == true) {
-    // find the item in the projects object and move it to completed project
+    updateStatus("complete", itemId);
     e.target.nextElementSibling.classList.add("strike");
   } else {
+    updateStatus("active", itemId);
     e.target.nextElementSibling.classList.remove("strike");
-    // neeed to find a way to save it's previous project and then revert back to that if they decide it's not completed. Should create a new value on the object called in the above if statementx
+    console.log(projects);
   }
+  console.log(projects);
 };
 
 export default completeTodo;

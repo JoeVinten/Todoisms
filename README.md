@@ -4,7 +4,8 @@ A small todo app which will utilise local storage, JavaScript modules, Webpack, 
 
 ## Project ToDos
 
-1. On complete move todos to the completed category.
+--1. On complete move todos to the completed category.--
+
 2. Update priority to show as a colour.
 3. Save to local storage
 4. Add delete functionality for todos
