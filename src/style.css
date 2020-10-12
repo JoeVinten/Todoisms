@@ -219,6 +219,10 @@ ul {
   box-shadow: 9px 8px 21px 6px rgba(94, 94, 94, 0.41);
 }
 
+.card__info {
+  margin: 1em 0;
+}
+
 .todo__header {
   display: flex;
   align-items: center;
@@ -234,4 +238,22 @@ ul {
 
 .strike {
   text-decoration: line-through;
+}
+
+.pri-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.red {
+  background: red;
+}
+
+.yellow {
+  background: #ffea05;
+}
+
+.green {
+  background: green;
 }

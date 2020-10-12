@@ -3,6 +3,7 @@ import showForm from "./events/showForm";
 import submitProject from "./events/submitProject";
 import submitTodo from "./events/submitTodo";
 import completeTodo from "./events/completeTodo";
+import deleteTodo from "./events/deleteTodo";
 
 let projects = [{ name: "Default", todo: [] }];
 
@@ -23,9 +24,17 @@ addToDoForm.addEventListener("submit", submitTodo);
 
 const main = document.querySelector(".main");
 
+// Mark as complete
+
 main.addEventListener("click", e => {
   if (e.target.classList.contains("todo__header__complete")) {
     completeTodo(e);
   }
+  if (e.target.classList.contains("del")) {
+    deleteTodo(e);
+  }
 });
+
+// delete item
+
 export { projects };
