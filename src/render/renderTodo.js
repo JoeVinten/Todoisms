@@ -21,9 +21,9 @@ const renderTodo = (uniqId, name, dueDate, project, priority) => {
       <input type="checkbox" class="todo__header__complete"/>
       <h4>${name}</h4>
     </div>
-    <div class="card__info">Due: ${dueDate}</div>
+    <div class="card__info todo__date">Due: ${dueDate}</div>
     <div class="card__info">${project}</div>
-    <div class="card__info">${priorityIndicator}</div>
+    <div class="card__info todo__priority">${priorityIndicator}</div>
     <div class="card__actions">
       <i class="edit fas fa-edit"></i>
       <i class="del fas fa-trash-alt"></i>

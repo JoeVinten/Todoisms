@@ -4,8 +4,7 @@ import submitProject from "./events/submitProject";
 import submitTodo from "./events/submitTodo";
 import completeTodo from "./events/completeTodo";
 import deleteTodo from "./events/deleteTodo";
-
-let projects = [{ name: "Default", todo: [] }];
+import { editTodo, updateToDo } from "./events/editTodo";
 
 // Hide and show forms
 const addProjBtn = document.querySelector(".add-item__project");
@@ -33,8 +32,29 @@ main.addEventListener("click", e => {
   if (e.target.classList.contains("del")) {
     deleteTodo(e);
   }
+  if (e.target.classList.contains("edit")) {
+    editTodo(e);
+  }
 });
 
-// delete item
+//
 
-export { projects };
+// close edit modal
+main.addEventListener("click", e => {
+  e.target.classList.contains("dark-overlay") ? e.target.remove() : null;
+});
+
+// editable
+
+main.addEventListener("input", e => {
+  //throwing an error because this item doesn't exit oneece it's killed off
+  if (e.target.parentElement.classList.contains("modal-form")) {
+    updateToDo(e);
+  }
+});
+
+main.addEventListener("click", e => {
+  if (e.target.parentElement.classList.contains("change-priority")) {
+    updateToDo(e);
+  }
+});
